@@ -16,6 +16,7 @@ const ListComponent = (props) => {
                    {props.exercises.map((exercise, index) => {
                        return (
                            <Item
+                               key={index}
                                exercise={exercise}
                                index={index}
                                handleDeleteExercise={props.handleDeleteExercise}

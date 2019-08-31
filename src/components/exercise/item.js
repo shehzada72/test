@@ -3,6 +3,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import InboxIcon from "@material-ui/core/SvgIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItem from "@material-ui/core/ListItem";
+import {Link} from 'react-router-dom';
 
 const Item = ({index, handleDeleteExercise, exercise}) => {
     return (
@@ -10,7 +11,9 @@ const Item = ({index, handleDeleteExercise, exercise}) => {
             <ListItemIcon onClick={() => handleDeleteExercise(index)}>
                 <InboxIcon />
             </ListItemIcon>
-            <ListItemText primary={exercise.title} />
+            <Link to={`/exercise/${exercise.title}`}>
+                <ListItemText primary={exercise.title} />
+            </Link>
         </ListItem>
     );
 };

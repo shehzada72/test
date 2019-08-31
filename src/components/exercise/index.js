@@ -4,6 +4,8 @@ import Divider from '@material-ui/core/Divider';
 import Grid from "@material-ui/core/Grid";
 import List from './list';
 import Counter from "./counter";
+import Header from "../home/header";
+import Layout from "../../hoc/layout";
 
 class Exercise extends React.Component {
 
@@ -29,7 +31,7 @@ class Exercise extends React.Component {
         console.log(this.state.exercises);
 
         return (
-            <div>
+            <Layout>
                 <Grid item xs={12}>
                     <Grid container justify="center">
                         <List exercises={this.state.exercises} handleDeleteExercise={this.handleDeleteExercise}/>
@@ -40,7 +42,7 @@ class Exercise extends React.Component {
 
                 </Grid>
                 <Divider />
-            </div>
+            </Layout>
         )
     }
 }
