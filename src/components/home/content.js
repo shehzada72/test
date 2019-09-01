@@ -1,24 +1,27 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {MainContext} from "../../context/App";
 
-const Content = () => {
-    const context = useContext(MainContext);
+class Content extends React.Component {
+    static contextType = MainContext;
 
-    const handleChange = e => {
+    handleChange = e => {
         const {name, value} = e.target;
 
-        context.handleUpdateState({[name]: value});
+        this.context.handleUpdateState({[name]: value});
     };
 
-    return (
-        <div>
-            <h1>App Name: {context.appName}</h1>
-            <h1>Server: {context.server}</h1>
-            <input value={context.appName} name={'appName'} onChange={handleChange}/>
-            <input value={context.server} name={'server'} onChange={handleChange}/>
+    render() {
+        const {context} = this;
+        return (
+            <div>
+                <h1>App Name: {context.appName}</h1>
+                <h1>Server: {context.server}</h1>
+                <input value={context.appName} name={'appName'} onChange={this.handleChange}/>
+                <input value={context.server} name={'server'} onChange={this.handleChange}/>
 
-        </div>
-    );
-};
+            </div>
+        );
+    }
+}
 
 export default Content;
