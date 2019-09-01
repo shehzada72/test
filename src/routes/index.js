@@ -5,8 +5,9 @@ import {MainContext} from "../context/App";
 
 class Index extends Component {
     state = {
-        appName: 'React Training',
-        server: 'Node JS'
+        appName: '',
+        server: '',
+        name: ''
     };
 
     handleUpdateState = (newState) => {
