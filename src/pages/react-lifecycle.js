@@ -1,4 +1,5 @@
 import React from 'react';
+import Layout from "../hoc/layout";
 
 class ReactLifeCycle extends React.Component {
     state = {
@@ -36,12 +37,12 @@ class ReactLifeCycle extends React.Component {
     render () {
         console.log('render');
         return (
-            <div>
+            <Layout>
                 <span style={{color: this.state.color}}>LifeCycle React </span> {this.state.testing}
 
                 <input value={this.state.testing} onChange={this.handleChange}/>
                 <button onClick={() => this.setState({testing: 'changed'})}>Update</button>
-            </div>
+            </Layout>
         )
     }
 
